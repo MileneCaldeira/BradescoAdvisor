@@ -1,1 +1,0 @@
-# BradescoAdvisor Prompts
