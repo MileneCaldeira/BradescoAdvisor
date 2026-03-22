@@ -1,120 +1,122 @@
-🏦 BradescoAdvisor — Agente de Relacionamento Financeiro com IA Generativa
-> **Projeto Final · Bootcamp Bradesco GenAI & Dados**  
-> Assistente conversacional inteligente para o relacionamento financeiro com clientes do Bradesco, construído com IA Generativa, Python e boas práticas de engenharia de dados.
+<div align="center">
+<img src="https://img.shields.io/badge/Bradesco-CC092F?style=for-the-badge&logoColor=white" alt="Bradesco"/>
+<img src="https://img.shields.io/badge/GenAI_%26_Dados-Bootcamp-CC092F?style=for-the-badge" alt="Bootcamp"/>
+<img src="https://img.shields.io/badge/Projeto_Final-2026-111111?style=for-the-badge" alt="Projeto Final"/>
+<br/><br/>
+🏦 BradescoAdvisor
+Agente de Relacionamento Financeiro com IA Generativa
+Respostas contextualizadas · Simulações reais · Experiência personalizada
+<br/>
+![Python](https://img.shields.io/badge/Python_3.11-3776AB?style=flat-square&logo=python&logoColor=white)
+![Anthropic](https://img.shields.io/badge/Claude_API-191919?style=flat-square&logo=anthropic&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-22c55e?style=flat-square)
+</div>
 ---
-🎯 Visão Geral
-O BradescoAdvisor é um agente financeiro baseado em IA Generativa capaz de:
-Responder FAQs inteligentes sobre produtos e serviços Bradesco
-Executar simulações financeiras (empréstimos, investimentos) com cálculos reais
-Explicar produtos com linguagem acessível e personalizada
-Manter contexto e memória ao longo da conversa
-Avaliar a qualidade das respostas com métricas objetivas
-Resultado de negócio: Redução do volume de atendimento humano para dúvidas frequentes, com experiência de usuário personalizada e segura.
+Visão Geral
+O BradescoAdvisor é um assistente financeiro inteligente construído com IA Generativa para transformar o relacionamento digital entre o Bradesco e seus clientes. Em vez de FAQs estáticos e longas filas de atendimento, o agente oferece respostas contextualizadas, simulações financeiras com cálculos reais e uma experiência personalizada — disponível 24h.
+Resultado de negócio: redução do volume de atendimento humano para dúvidas frequentes, com UX clara, segura e escalável.
 ---
-🗂️ Estrutura do Projeto (6 Etapas)
+Funcionalidades
+	Funcionalidade	Descrição
+🧠	FAQ Inteligente	Respostas contextualizadas sobre produtos, serviços e processos Bradesco
+📊	Simulações Financeiras	Empréstimos (Tabela Price) e investimentos (juros compostos + IR regressivo)
+💬	Memória de Contexto	Mantém o histórico da conversa para respostas cada vez mais personalizadas
+🔐	Guardrails de Segurança	Disclaimers automáticos, sem captação de dados sensíveis
+📈	Avaliação Contínua	Score de qualidade em 5 dimensões com relatório automático de métricas
+---
+Estrutura do Projeto
 ```
 bradesco-advisor/
 │
-├── app.py                          ← Etapa 4: Aplicação funcional (Streamlit)
+├── 📄 app.py                           # Etapa 4 — Aplicação funcional (Streamlit)
 │
-├── data/
-│   └── knowledge_base.json        ← Etapa 2: Base de Conhecimento
+├── 📁 data/
+│   └── knowledge_base.json            # Etapa 2 — Base de conhecimento estruturada
 │
-├── prompts/
-│   └── agent_prompts.py           ← Etapa 3: Prompts do Agente
+├── 📁 prompts/
+│   └── agent_prompts.py               # Etapa 3 — Prompts do agente
 │
-├── utils/
-│   └── financial_calculator.py    ← Etapa 4: Simulações financeiras
+├── 📁 utils/
+│   └── financial_calculator.py        # Etapa 4 — Engine de simulações financeiras
 │
-├── evaluation/
-│   └── metrics.py                 ← Etapa 5: Avaliação e Métricas
+├── 📁 evaluation/
+│   └── metrics.py                     # Etapa 5 — Avaliação e métricas de qualidade
 │
-├── docs/
-│   └── agent_documentation.md     ← Etapa 1: Documentação do Agente
+├── 📁 docs/
+│   ├── agent_documentation.md         # Etapa 1 — Documentação técnica do agente
+│   └── pitch.html                     # Etapa 6 — Pitch deck de entrega
 │
 ├── requirements.txt
 └── README.md
 ```
 ---
-🧠 Etapa 1 — Documentação do Agente
-Atributo	Descrição
-Nome	BradescoAdvisor
-Objetivo	Relacionamento financeiro digital com IA Generativa
-Modelo	Claude Sonnet (Anthropic API)
-Linguagem	Python 3.11+
-Interface	Streamlit Web App
-Domínio	Serviços financeiros — Banco Bradesco
-Capacidades	FAQ, Simulação, Orientação, Contextualização
-Limitações	Não aprova crédito, não acessa dados reais do cliente, não substitui gerente
-Casos de uso principais:
-Cliente quer entender diferença entre CDB e Tesouro Direto
-Cliente quer simular parcelas de um empréstimo
-Cliente tem dúvida sobre como bloquear cartão
-Cliente quer saber qual investimento se adequa ao seu perfil
+As 6 Etapas do Desafio
+<details>
+<summary><strong>Etapa 1 — Documentação do Agente</strong></summary>
+<br/>
+Especificação técnica completa: objetivos, arquitetura de componentes, casos de uso, guardrails de segurança, limitações conhecidas e métricas de sucesso. Serve como contrato técnico do que o agente deve e não deve fazer.
+📄 `docs/agent_documentation.md`
+</details>
+<details>
+<summary><strong>Etapa 2 — Base de Conhecimento</strong></summary>
+<br/>
+JSON hierárquico com dados estruturados sobre os principais produtos Bradesco (contas, cartões, investimentos, crédito, seguros), FAQ com 8 perguntas frequentes e taxas de mercado (Selic, CDI, IPCA). Injetada dinamicamente no system prompt.
+📄 `data/knowledge_base.json`
+</details>
+<details>
+<summary><strong>Etapa 3 — Prompts do Agente</strong></summary>
+<br/>
+Três prompts engenheirados para comportamentos distintos:
+`SYSTEM_PROMPT` — identidade, tom, base de conhecimento e guardrails
+`INTENT_CLASSIFIER_PROMPT` — classifica intenção em JSON estruturado (`FAQ`, `SIMULACAO`, `PRODUTO`, `RECLAMACAO`)
+`SIMULATION_PROMPT` — chain-of-thought para simulações com cálculos transparentes
+📄 `prompts/agent_prompts.py`
+</details>
+<details>
+<summary><strong>Etapa 4 — Aplicação Funcional</strong></summary>
+<br/>
+App Streamlit completo com identidade visual Bradesco, chat persistente, KPI strip com taxas de mercado, botões de acesso rápido e painel de métricas inline. Engine local de simulações financeiras (sem custo de API) com Tabela Price, juros compostos e IR regressivo.
+📄 `app.py` · `utils/financial_calculator.py`
+</details>
+<details>
+<summary><strong>Etapa 5 — Avaliação e Métricas</strong></summary>
+<br/>
+Sistema de avaliação automática com 5 dimensões ponderadas:
+Dimensão	Peso	O que mede
+Clarity	25%	Estrutura, markdown e marcadores de clareza
+Domain Relevance	25%	Uso de terminologia financeira
+Completeness	20%	Tamanho adequado da resposta
+Helpfulness	15%	Orientações acionáveis ao cliente
+Safety Compliance	15%	Disclaimers e responsabilidade
+Gera relatório com score composto, distribuição de intenções e recomendações de melhoria.
+📄 `evaluation/metrics.py`
+</details>
+<details>
+<summary><strong>Etapa 6 — Pitch e Entrega</strong></summary>
+<br/>
+Pitch deck em HTML com identidade visual Bradesco cobrindo problema, solução, arquitetura técnica, métricas e stack. README com posicionamento sênior e estrutura clara para avaliação.
+📄 `docs/pitch.html`
+</details>
 ---
-📚 Etapa 2 — Base de Conhecimento
-A base de conhecimento (`data/knowledge_base.json`) estrutura informações sobre:
-Produtos: Conta corrente, cartões de crédito, investimentos, crédito, seguros
-FAQ: 8 perguntas frequentes com respostas detalhadas
-Taxas de referência: Selic, CDI, IPCA atualizados
-Estratégia de estruturação:
-JSON hierárquico para fácil consulta programática
-Dados agnósticos de tempo (atualizáveis sem alterar o código)
-Injetado dinamicamente no system prompt da IA
----
-🎭 Etapa 3 — Prompts do Agente
-Três prompts engenheirados para comportamentos específicos:
-Prompt	Finalidade
-`SYSTEM_PROMPT`	Identidade, regras, base de conhecimento e tom do agente
-`INTENT_CLASSIFIER_PROMPT`	Classificação de intenção em JSON estruturado
-`SIMULATION_PROMPT`	Execução de simulações financeiras explicadas
-Técnicas aplicadas:
-Role prompting com identidade definida
-Output format specification (JSON para classificação)
-Chain-of-thought para simulações (mostrar cálculos)
-Guardrails explícitos (o que SEMPRE e NUNCA fazer)
----
-⚙️ Etapa 4 — Aplicação Funcional
 Arquitetura
 ```
 Usuário → Streamlit UI
-         ↓
-    Intent Detection (Claude API)
-         ↓
-    Simulation Engine (Local Python)    ← para cálculos matemáticos
-         ↓
-    BradescoAdvisor (Claude API)        ← com knowledge base + contexto
-         ↓
-    Response + Metrics Logging
-```
-Funcionalidades da Interface
-🔴 Header com identidade visual Bradesco
-📊 KPI strip com taxas de mercado em tempo real
-💬 Chat persistente com histórico da sessão
-⚡ Botões de acesso rápido às perguntas mais comuns
-👤 Personalização por nome do cliente
-📈 Painel de métricas de qualidade (toggle)
----
-📊 Etapa 5 — Avaliação e Métricas
-O módulo `evaluation/metrics.py` implementa avaliação em 5 dimensões:
-Métrica	Peso	O que mede
-Clarity	25%	Estrutura e marcadores de clareza
-Domain Relevance	25%	Uso de terminologia financeira
-Completeness	20%	Tamanho adequado da resposta
-Helpfulness	15%	Orientações acionáveis
-
-Safety Compliance	15%	Disclaimers e responsabilidade
-Saída do relatório:
-```json
-{
-  "quality_scores": {"avg_composite_score": 0.78, "score_label": "Bom"},
-  "user_satisfaction": {"avg_rating": 4.2},
-  "intent_distribution": {"FAQ": 5, "SIMULACAO": 2},
-  "recommendations": ["..."]
-}
+              ↓
+     [Intent Detection]  →  Claude API  (max 200 tokens)
+              ↓
+   [Simulation Engine]   →  Python local (sem latência)
+              ↓
+    [Context Builder]    →  KB (3.000 chars) + histórico (8 msgs)
+              ↓
+      [Main Chat]        →  Claude API  (max 1.500 tokens)
+              ↓
+  [Metrics Logging]      →  AgentEvaluator (5 dimensões)
+              ↓
+         Resposta + Badge de intenção + Painel de métricas
 ```
 ---
-🚀 Como Executar
+Como Executar
 ```bash
 # 1. Clone o repositório
 git clone https://github.com/MileneCaldeira/bradesco-advisor
@@ -126,29 +128,22 @@ pip install -r requirements.txt
 # 3. Configure a API Key
 export ANTHROPIC_API_KEY="sua-chave-aqui"
 
-# 4. Execute o app
+# 4. Execute
 streamlit run app.py
 ```
 ---
-🛠️ Stack Tecnológica
-Tecnologia	Uso
-Python 3.11	Linguagem principal
-Anthropic Claude API	Motor de IA Generativa
-Streamlit	Interface web interativa
-JSON	Base de conhecimento estruturada
-Dataclasses	Modelagem de dados tipada
+Stack
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Claude](https://img.shields.io/badge/Claude_API-191919?style=flat-square&logo=anthropic&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
+![JSON](https://img.shields.io/badge/JSON-000000?style=flat-square&logo=json&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ---
-💡 Destaques Técnicos
-Sem dependências de terceiros para simulações — cálculos financeiros implementados do zero (Price, juros compostos, IR regressivo)
-Classificação de intenção desacoplada — intent detection antes do chat principal permite logging e métricas granulares
-Context window management — trunca histórico para otimizar tokens sem perder continuidade
-Avaliação automática — métricas heurísticas independentes do modelo, auditáveis e reproduzíveis
----
-👩‍💻 Autora
-Milene Caldeira — Data Analyst & BI Professional  
-📧 mcaldeira.tech@gmail.com  
-🔗 linkedin.com/in/milene-caldeira  
-🌐 milenecaldeira.github.io  
-💻 github.com/MileneCaldeira
----
-Projeto desenvolvido no Bootcamp Bradesco GenAI & Dados · 2026
+<div align="center">
+Milene Caldeira
+![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
+![Portfolio](https://img.shields.io/badge/Portfolio-CC092F?style=flat-square&logo=googlechrome&logoColor=white)
+![Email](https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white)
+Bootcamp Bradesco GenAI & Dados · Projeto Final · 2026
+</div>
