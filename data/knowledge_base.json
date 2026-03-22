@@ -1,0 +1,80 @@
+{
+  "banco": {
+    "nome": "Banco Bradesco S.A.",
+    "fundacao": "1943",
+    "sede": "Osasco, São Paulo",
+    "descricao": "Um dos maiores bancos privados do Brasil, com mais de 80 anos de história, presente em todos os municípios brasileiros.",
+    "canais": ["App Bradesco", "Internet Banking", "WhatsApp", "Agências", "Bradesco Expresso", "Caixas Eletrônicos"]
+  },
+  "produtos": {
+    "conta_corrente": {
+      "nome": "Conta Corrente Bradesco",
+      "tipos": ["Conta Universitária", "Conta Click (jovens)", "Conta Pessoa Física", "Conta Pessoa Jurídica"],
+      "beneficios": ["Cartão de débito e crédito", "Acesso ao app 24h", "Transferências via Pix gratuitas", "Cashback em compras selecionadas"],
+      "documentos_necessarios": ["RG ou CNH", "CPF", "Comprovante de residência", "Comprovante de renda (para alguns tipos)"]
+    },
+    "cartao_credito": {
+      "nome": "Cartões de Crédito Bradesco",
+      "categorias": [
+        {"nome": "Bradesco Visa Clássico", "anuidade": "R$ 180/ano", "beneficios": ["Programa Livelo", "Parcelamento de fatura"]},
+        {"nome": "Bradesco Visa Gold", "anuidade": "R$ 360/ano", "beneficios": ["Programa Livelo 2x", "Seguro viagem", "Sala VIP Lounge"]},
+        {"nome": "Bradesco Visa Infinite", "anuidade": "R$ 900/ano", "beneficios": ["Programa Livelo 3x", "Acesso ilimitado a salas VIP", "Concierge 24h", "Seguro viagem premium"]},
+        {"nome": "Bradesco Visa Nano", "anuidade": "Isenta", "beneficios": ["Sem anuidade", "Limite inicial", "Ideal para negativados em recuperação"]}
+      ]
+    },
+    "investimentos": {
+      "renda_fixa": [
+        {"nome": "CDB Bradesco", "rentabilidade": "até 110% do CDI", "liquidez": "Diária ou no vencimento", "valor_minimo": "R$ 1.000", "garantia": "FGC até R$ 250.000"},
+        {"nome": "Tesouro Direto via Bradesco", "tipos": ["Tesouro Selic", "Tesouro IPCA+", "Tesouro Prefixado"], "valor_minimo": "R$ 30"},
+        {"nome": "LCI/LCA", "rentabilidade": "até 95% do CDI", "isencao": "Imposto de Renda", "valor_minimo": "R$ 5.000"}
+      ],
+      "renda_variavel": [
+        {"nome": "Ações", "plataforma": "Bradesco Corretora", "taxa_corretagem": "A partir de R$ 0 para day trade"},
+        {"nome": "Fundos de Investimento", "tipos": ["Fundos DI", "Multimercado", "Ações", "Imobiliários (FII)"], "valor_minimo": "R$ 100"}
+      ]
+    },
+    "credito": {
+      "emprestimo_pessoal": {
+        "nome": "Crédito Pessoal Bradesco",
+        "taxa_media": "de 1,99% a.m.",
+        "prazo_max": "60 meses",
+        "valor_max": "R$ 100.000",
+        "documentos": ["RG", "CPF", "Comprovante de renda"]
+      },
+      "financiamento_imovel": {
+        "nome": "Financiamento Imobiliário Bradesco",
+        "taxa_media": "de 10,49% a.a. + TR",
+        "prazo_max": "420 meses (35 anos)",
+        "financiamento_max": "80% do valor do imóvel",
+        "sistemas": ["SAC (amortização constante)", "Price (parcelas fixas)"]
+      },
+      "financiamento_veiculo": {
+        "nome": "CDC Auto Bradesco",
+        "taxa_media": "de 1,49% a.m.",
+        "prazo_max": "60 meses",
+        "financiamento_max": "100% para veículos novos"
+      }
+    },
+    "seguros": {
+      "vida": {"nome": "Seguro de Vida Bradesco Seguros", "coberturas": ["Morte", "Invalidez", "Doenças graves"]},
+      "automovel": {"nome": "Seguro Auto Bradesco", "coberturas": ["Colisão", "Roubo/Furto", "Incêndio", "Assistência 24h"]},
+      "residencia": {"nome": "Seguro Residência", "coberturas": ["Incêndio", "Roubo", "Danos elétricos", "Responsabilidade civil"]}
+    }
+  },
+  "faq": [
+    {"pergunta": "Como abrir conta no Bradesco?", "resposta": "Você pode abrir sua conta pelo app Bradesco, pelo site bradesco.com.br, ou presencialmente em uma agência. É necessário RG/CNH, CPF e comprovante de residência. Para conta digital, o processo é 100% online e leva menos de 10 minutos."},
+    {"pergunta": "Como fazer Pix no Bradesco?", "resposta": "Acesse o app Bradesco > Pix > Transferir. Você pode transferir via chave Pix (CPF, e-mail, telefone ou chave aleatória), QR Code ou dados bancários. O Pix é disponível 24h por dia, 7 dias por semana, e a maioria das transferências são gratuitas."},
+    {"pergunta": "Como bloquear cartão perdido ou roubado?", "resposta": "Imediatamente: acesse o app Bradesco > Cartões > Bloquear cartão, ou ligue 0800 722 4848 (24h). Você pode solicitar a segunda via pelo próprio app gratuitamente."},
+    {"pergunta": "Qual o rendimento da poupança Bradesco?", "resposta": "A poupança rende 0,5% ao mês + TR quando a Selic está acima de 8,5% a.a., ou 70% da Selic + TR quando abaixo. Porém, existem alternativas mais rentáveis no Bradesco como o CDB com liquidez diária que pode render até 110% do CDI."},
+    {"pergunta": "Como solicitar aumento de limite do cartão?", "resposta": "Pelo app Bradesco: Menu > Cartões > Gerenciar limite. O banco avalia histórico de pagamentos, renda e relacionamento. Você também pode ligar no 0800 722 4848 ou acessar a agência mais próxima."},
+    {"pergunta": "Como renegociar dívidas no Bradesco?", "resposta": "O Bradesco oferece o programa Negociar Fácil. Acesse o app > Negociações, ou pelo site bradesco.com.br/negociar. Você também pode ligar no 0800 722 0080. Em muitos casos há descontos de juros e parcelamento especial."},
+    {"pergunta": "O Bradesco tem investimentos sem IR?", "resposta": "Sim! LCI (Letra de Crédito Imobiliário) e LCA (Letra de Crédito do Agronegócio) são isentas de Imposto de Renda para pessoa física. O Tesouro Selic também é uma opção de baixo risco, mas tem IR regressivo."},
+    {"pergunta": "Qual a diferença entre CDB e Tesouro Direto?", "resposta": "CDB é emitido por bancos (garantido pelo FGC até R$250k) e pode render até 110% do CDI. Tesouro Direto é emitido pelo governo federal (risco soberano) e tem opções atreladas à Selic, IPCA ou prefixado. Ambos são boas opções de renda fixa segura."}
+  ],
+  "taxas_referencia": {
+    "cdi_atual": "10,65% a.a.",
+    "selic_atual": "10,75% a.a.",
+    "ipca_12m": "4,83%",
+    "data_atualizacao": "Março 2026"
+  }
+}
